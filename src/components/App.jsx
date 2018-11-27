@@ -10,10 +10,14 @@ import VideoPlayer from './VideoPlayer.js';
 class App extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      inPlayer: exampleVideoData[0],
+      videoList: exampleVideoData
+    }
   }
-
+  
   render() {
-    
+    {console.log(this.state)}
     return(
       <div>
         <nav className="navbar">
@@ -23,10 +27,10 @@ class App extends React.Component {
         </nav>
         <div className="row">
           <div className="col-md-7">
-            <div><h5><em>videoPlayer</em><VideoPlayer video={exampleVideoData[0]}/></h5></div>
+            <div><h5><em>videoPlayer</em><VideoPlayer video={this.state.inPlayer}/></h5></div>
           </div>
           <div className="col-md-5">
-            <div><h5><em>videoList HEIIII</em><VideoList videos={exampleVideoData}/></h5></div>
+            <div><h5><em>videoList</em><VideoList videos={this.state.videoList}/></h5></div>
           </div>
         </div>
       </div>
