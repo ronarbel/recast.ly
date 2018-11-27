@@ -23,7 +23,6 @@ class App extends React.Component {
   }
   
   render() {
-    {console.log(this.state)}
     return(
       <div>
         <nav className="navbar">
@@ -36,7 +35,7 @@ class App extends React.Component {
             <div><h5><em>videoPlayer</em><VideoPlayer video={this.state.inPlayer}/></h5></div>
           </div>
           <div className="col-md-5">
-            <div><h5><em>videoList</em><VideoList videos={this.state.videoList} updateState={this.onListTitleClick}/></h5></div>
+            <div><h5><em>videoList</em><VideoList videos={this.state.videoList} updateState={this.onListTitleClick.bind(this)}/></h5></div>
           </div>
         </div>
       </div>
