@@ -14,7 +14,7 @@ var App = () => (
         <div><h5><em>videoPlayer</em> 123 view goes here</h5></div>
       </div>
       <div className="col-md-5">
-        <div><h5><em>videoList</em><VideoList videos={['video1','video2','video3']}/></h5></div>
+        <div><h5><em>videoList</em><VideoList videos={['video1', 'video2', 'video3']}/></h5></div>
       </div>
     </div>
   </div>
