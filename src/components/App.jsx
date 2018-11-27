@@ -7,12 +7,13 @@ import VideoListEntry from './VideoListEntry.js';
 import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
 
-class App extends React.Component{
+class App extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
   }
 
   render() {
+    
     return(
       <div>
         <nav className="navbar">
