@@ -20,13 +20,19 @@ class App extends React.Component {
     })
   }
 
+  onSuccessfulDataRequest(newList) {
+    this.setState({
+      videoList: newList
+    })
+  }
+
   componentDidMount() {
     var options = {
       query: 'hello cats',
       max: 5,
       key: YOUTUBE_API_KEY
     }
-   this.props.searchYouTube(options, (data) => {console.log('successful AJAX request!', data)})
+   this.props.searchYouTube(options, this.onSuccessfulDataRequest.bind(this));
   }
 
   render() {
