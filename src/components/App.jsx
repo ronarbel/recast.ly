@@ -26,7 +26,7 @@ class App extends React.Component {
       max: 5,
       key: YOUTUBE_API_KEY
     }
-    searchYouTube(options, () => {console.log('successful AJAX request!')})
+   this.props.searchYouTube(options, (data) => {console.log('successful AJAX request!', data)})
   }
 
   render() {
