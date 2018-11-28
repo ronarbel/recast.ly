@@ -1,10 +1,10 @@
-import VideoList from "./VideoList.js";
-import VideoListEntry from "./VideoListEntry.js";
-import exampleVideoData from "../data/exampleVideoData.js";
-import VideoPlayer from "./VideoPlayer.js";
-import searchYouTube from "../lib/searchYouTube.js";
-import YOUTUBE_API_KEY from "../config/youtube.js";
-import Search from "./Search.js";
+import VideoList from './VideoList.js';
+import VideoListEntry from './VideoListEntry.js';
+import exampleVideoData from '../data/exampleVideoData.js';
+import VideoPlayer from './VideoPlayer.js';
+import searchYouTube from '../lib/searchYouTube.js';
+import YOUTUBE_API_KEY from '../config/youtube.js';
+import Search from './Search.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -28,7 +28,7 @@ class App extends React.Component {
   }
 
   handleSubmit() {
-    console.log("submit was clicked");
+    console.log('submit was clicked');
   }
 
   handleChange(event) {
@@ -42,7 +42,7 @@ class App extends React.Component {
 
   componentDidMount() {
     var options = {
-      query: "hello cats",
+      query: 'hello cats',
       max: 5,
       key: YOUTUBE_API_KEY
     };
@@ -52,8 +52,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <nav className="navbar">
-          <div className="col-md-6 offset-md-3">
+        <nav className='navbar'>
+          <div className='col-md-6 offset-md-3'>
             <div>
               <h5>
                 <em>SEARCH:</em>
@@ -65,8 +65,8 @@ class App extends React.Component {
             </div>
           </div>
         </nav>
-        <div className="row">
-          <div className="col-md-7">
+        <div className='row'>
+          <div className='col-md-7'>
             <div>
               <h5>
                 <em>videoPlayer</em>
@@ -74,7 +74,7 @@ class App extends React.Component {
               </h5>
             </div>
           </div>
-          <div className="col-md-5">
+          <div className='col-md-5'>
             <div>
               <h5>
                 <em>videoList</em>

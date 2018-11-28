@@ -1,7 +1,7 @@
 var Search = props => (
   <form onSubmit={props.handleSubmit}>
-    <input type="text" className="form-control" onChange={props.onChange} />
-    <input type="submit" value="Submit" />
+    <input type='text' className='form-control' onChange={props.onChange} />
+    <input type='submit' value='Submit' />
   </form>
 );
 

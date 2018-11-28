@@ -1,25 +1,25 @@
-import App from "./App.js";
+import App from './App.js';
 
 var VideoListEntry = props => {
   return (
-    <div className="video-list-entry media">
-      <div className="media-left media-middle">
+    <div className='video-list-entry media'>
+      <div className='media-left media-middle'>
         <img
-          className="media-object"
+          className='media-object'
           src={props.video.snippet.thumbnails.default.url}
-          alt=""
+          alt=''
         />
       </div>
-      <div className="media-body">
+      <div className='media-body'>
         <div
-          className="video-list-entry-title"
+          className='video-list-entry-title'
           onClick={() => {
             props.updateStateCB(props.video);
           }}
         >
           {props.video.snippet.title}
         </div>
-        <div className="video-list-entry-detail">
+        <div className='video-list-entry-detail'>
           {props.video.snippet.description}
         </div>
       </div>
