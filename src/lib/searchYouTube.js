@@ -3,7 +3,15 @@ var searchYouTube = (options, callback) => {
   $.ajax({
     url: 'https://www.googleapis.com/youtube/v3/search',
     type: 'GET',
-    data: options,
+    data: {
+      maxResults: options.max,
+      part: 'snippet',
+      q: options.query,
+      type: 'video',
+      key: options.key,
+      videoEmbeddable: true,
+      
+    },
     success: callback,
     error: function(error) {
       console.error('searchYouTube: Failed to fetch messages', error);
