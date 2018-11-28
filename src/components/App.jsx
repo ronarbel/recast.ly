@@ -36,7 +36,6 @@ class App extends React.Component {
       max: 5,
       key: YOUTUBE_API_KEY
     }
-    console.log(options.query)
    this.props.searchYouTube(options, this.onSuccessfulDataRequest.bind(this));
   }
 
@@ -58,7 +57,7 @@ class App extends React.Component {
               <h5>
                 <em>SEARCH:</em>
                 <form onSubmit={this.handleSubmit}>
-                    <input type="text" onChange={this.handleChange.bind(this)} />
+                    <input type="text" className="form-control" onChange={this.handleChange.bind(this)} />
                   <input type="submit" value="Submit" />
                 </form>
               </h5>
