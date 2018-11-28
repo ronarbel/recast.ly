@@ -26,6 +26,20 @@ class App extends React.Component {
     })
   }
 
+  handleSubmit() {
+    console.log('submit was clicked')
+  }
+
+  handleChange(event) {
+    var options = {
+      query: event.target.value,
+      max: 5,
+      key: YOUTUBE_API_KEY
+    }
+    console.log(options.query)
+   this.props.searchYouTube(options, this.onSuccessfulDataRequest.bind(this));
+  }
+
   componentDidMount() {
     var options = {
       query: 'hello cats',
@@ -40,7 +54,15 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em>Sample Search</h5></div>
+            <div>
+              <h5>
+                <em>SEARCH:</em>
+                <form onSubmit={this.handleSubmit}>
+                    <input type="text" onChange={this.handleChange.bind(this)} />
+                  <input type="submit" value="Submit" />
+                </form>
+              </h5>
+            </div>
           </div>
         </nav>
         <div className="row">
@@ -60,3 +82,4 @@ class App extends React.Component {
 // `var` declarations will only exist globally where explicitly defined
 export default App;
 
+// <input type="text" class="searchTerm" placeholder=" Search With Your Heart"/><button type="submit" class="searchButton">submit</button>
