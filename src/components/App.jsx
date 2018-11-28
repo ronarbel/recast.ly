@@ -1,11 +1,9 @@
-// import VideoList from '../../src/components/VideoList.js';
-// import VideoListEntry from '../../src/components/VideoListEntry.js';
-// import exampleVideoData from '../../src/data/exampleVideoData.js';
-
 import VideoList from './VideoList.js';
 import VideoListEntry from './VideoListEntry.js';
 import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
+import searchYouTube from '../lib/searchYouTube.js'
+import YOUTUBE_API_KEY from '../config/youtube.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -21,13 +19,22 @@ class App extends React.Component {
       inPlayer: newVid
     })
   }
-  
+
+  componentDidMount() {
+    var options = {
+      query: 'hello cats',
+      max: 5,
+      key: YOUTUBE_API_KEY
+    }
+    searchYouTube(options, () => {console.log('successful AJAX request!')})
+  }
+
   render() {
     return(
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div><h5><em>search</em>Hello World view goes here</h5></div>
+            <div><h5><em>search</em>Sample Search</h5></div>
           </div>
         </nav>
         <div className="row">
@@ -35,7 +42,7 @@ class App extends React.Component {
             <div><h5><em>videoPlayer</em><VideoPlayer video={this.state.inPlayer}/></h5></div>
           </div>
           <div className="col-md-5">
-            <div><h5><em>videoList</em><VideoList videos={this.state.videoList} updateState={this.onListTitleClick.bind(this)}/></h5></div>
+            <div><h5><em>videoList</em><VideoList videos={this.state.videoList} updateStateCB={this.onListTitleClick.bind(this)}/></h5></div>
           </div>
         </div>
       </div>
