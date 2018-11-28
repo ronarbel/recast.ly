@@ -4,6 +4,7 @@ import exampleVideoData from '../data/exampleVideoData.js';
 import VideoPlayer from './VideoPlayer.js';
 import searchYouTube from '../lib/searchYouTube.js'
 import YOUTUBE_API_KEY from '../config/youtube.js'
+import Search from './Search.js'
 
 class App extends React.Component {
   constructor(props) {
@@ -53,13 +54,8 @@ class App extends React.Component {
       <div>
         <nav className="navbar">
           <div className="col-md-6 offset-md-3">
-            <div>
-              <h5>
-                <em>SEARCH:</em>
-                <form onSubmit={this.handleSubmit}>
-                    <input type="text" className="form-control" onChange={this.handleChange.bind(this)} />
-                  <input type="submit" value="Submit" />
-                </form>
+            <div><h5><em>SEARCH:</em><Search handleSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)} />
+                
               </h5>
             </div>
           </div>
